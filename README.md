@@ -1,26 +1,18 @@
-## ice-cream
+# Azure DevOps with SharePoint Framework 
 
-This is where you include your WebPart documentation.
+The current sample includes node.js api and SPFx package to be deployed using Azure pipelines.
+You can get started with this video. 
 
-### Building the code
+[![Community Demo - Setting up Azure DevOps Pipelines for SharePoint Framework solutions](https://img.youtube.com/vi/V6xEy6_2iTg/0.jpg)](https://www.youtube.com/watch?v=V6xEy6_2iTg "Community Demo - Setting up Azure DevOps Pipelines for SharePoint Framework solutions")
 
-```bash
-git clone the repo
-npm i
-npm i -g gulp
-gulp
-```
 
-This package produces the following:
 
-* lib/* - intermediate-stage commonjs build artifacts
-* dist/* - the bundled script, along with other resources
-* deploy/* - all resources which should be uploaded to a CDN.
+### Setup
 
-### Build options
+[https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v1-nodejs-webapi](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v1-nodejs-webapi)
 
-gulp clean - TODO
-gulp test - TODO
-gulp serve - TODO
-gulp bundle - TODO
-gulp package-solution - TODO
+[https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-nodejs](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-nodejs)
+
+[https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-rm-web-app-deployment?view=vsts](https://docs.microsoft.com/en-us/azure/devops/pipelines/tasks/deploy/azure-rm-web-app-deployment?view=vsts)
+
+Azure App Service Deploy
