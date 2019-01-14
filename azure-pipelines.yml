@@ -16,15 +16,21 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    cd spfx
     npm install
     gulp bundle --ship
     gulp package-solution --ship
   displayName: 'npm install and build'
 
+- script: |
+    cd spfx
+    npm test
+  displayName: 'npm test (jest)'
+
 # Publish Build Artifacts SPFx sppkg
 - task: PublishBuildArtifacts@1
   inputs:
-    pathtoPublish: '$(Build.SourcesDirectory)/sharepoint/solution/node-frontend.sppkg' 
+    pathtoPublish: '$(Build.SourcesDirectory)/spfx/sharepoint/solution/node-frontend.sppkg' 
     artifactName: 'SPFx sppkg' 
   displayName: 'Publish build SPFx artifacts'
 
