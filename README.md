@@ -27,6 +27,11 @@ A PnP Sample step by steb guide can be found here:
 
 
 ```sh
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
 trigger:
 - master
 
@@ -44,12 +49,12 @@ steps:
     npm install
     gulp bundle --ship
     gulp package-solution --ship
-  displayName: 'npm install, build and package the solution'
+  displayName: 'npm install and build'
 
 - script: |
     cd spfx
     npm test
-  displayName: 'Run jest tests'
+  displayName: 'npm test (jest)'
 
 # Publish Build Artifacts SPFx sppkg
 - task: PublishBuildArtifacts@1
@@ -64,37 +69,6 @@ steps:
     pathtoPublish: '$(Build.SourcesDirectory)/devops/release/' 
     artifactName: 'Office 365 CLI scripts' 
   displayName: 'Publish build Office 365 CLI artifacts'
-```
-
-Nodejs setup
-
-```sh
-
-- script: |
-    cd api
-    npm install
-    npm run build
-    npm test
-  displayName: 'Node.js API npm install and build'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    pathtoPublish: '$(Build.SourcesDirectory)/api/build/src' 
-    artifactName: 'Publish Node API' 
-  displayName: 'Publish Node API source'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    pathtoPublish: '$(Build.SourcesDirectory)/api/web.config' 
-    artifactName: 'Publish Node API' 
-  displayName: 'Publish Node API config'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    pathtoPublish: '$(Build.SourcesDirectory)/api/package.json' 
-    artifactName: 'Publish Node API' 
-  displayName: 'Publish Node API package.json'
-
 ```
 
 Azure App Service Deploy
