@@ -23,7 +23,7 @@ export default class NodeFrontend extends React.Component<INodeFrontendProps, IN
           <div className={styles.row}>
             <div className={styles.column}>
               <h1 className={styles.title}>Welcome to SharePoint!</h1>
-              <h2 className={styles.title}>Version 2</h2>
+              <h2 className={styles.title}>Version 3</h2>
               <p className={styles.description}>{escape(this.props.description)}</p>
 
               <button className={styles.button} id="buyButton" onClick={this.getApiResponseMessage.bind(this)}>
